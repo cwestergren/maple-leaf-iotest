@@ -4,21 +4,21 @@ CC := $(CROSS)-gcc
 
 PROJECTNAME := iotest
 
-CFLAGS := -g -O0 -Wall -mlittle-endian -mthumb -mcpu=cortex-m4 -mthumb-interwork -mfpu=fpv4-sp-d16 -mfloat-abi=softfp
+CFLAGS := -g -O0 -Wall -mlittle-endian -mthumb -mcpu=cortex-m3 -mthumb-interwork
 CFLAGS += -fdata-sections -ffunction-sections
 CFLAGS += -std=gnu99
 CFLAGS += -DUSE_HW_SPI
 CFLAGS += -DGIT_BASE_REVISION=\"`git rev-parse --short HEAD`\"
 #CFLAGS += -fomit-frame-pointer
-LDFLAGS := -lgcc -Wl,-TSTM32F405RG_FLASH.ld
+LDFLAGS := -lgcc -Wl,-TSTM32F103RB_FLASH.ld
 #LDFLAGS +=  -Wl,--print-gc-sections
 LDFLAGS += -Xlinker --gc-sections
 
 CFLAGS += -Iinc -Iutil/inc
 
 OBJS := \
-        src/startup_stm32f405xx.o \
-        src/system_stm32f4xx.o \
+        src/startup_stm32f103xb.o \
+        src/system_stm32f10x.o \
         src/main.o \
         src/leds.o \
         src/syscalls.o \
