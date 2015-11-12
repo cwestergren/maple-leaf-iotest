@@ -20,15 +20,15 @@ OBJS := \
         src/startup_stm32f10x_md.o \
         src/system_stm32f10x.o \
         src/main.o \
-        src/leds.o \
+  	    src/leds.o \
         src/syscalls.o \
-        src/uart.o \
-        util/src/log.o \
-        src/cli/cli.o \
-        src/cli/cmd_free.o \
-        src/cli/cmd_info.o \
-        src/cli/cmd_ps.o \
-        src/cli/cmd_uname.o
+#        src/uart.o \
+#        util/src/log.o \
+#        src/cli/cli.o \
+#        src/cli/cmd_free.o \
+#        src/cli/cmd_info.o \
+#        src/cli/cmd_ps.o \
+#        src/cli/cmd_uname.o
 
 include Makefile.stdperiph
 include Makefile.mw

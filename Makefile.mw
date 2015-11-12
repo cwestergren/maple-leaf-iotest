@@ -1,6 +1,7 @@
 CFLAGS += -IFreeRTOS/Source/CMSIS_RTOS
 CFLAGS += -IFreeRTOS/Source/include
 CFLAGS += -IFreeRTOS/Source/portable/GCC/ARM_CM3
+CFLAGS += -ILibraries/CMSIS/Include
 
 OBJS += \
 	src/freertos.o \
