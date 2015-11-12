@@ -2,7 +2,7 @@
 CROSS ?= /opt/gcc-arm-none-eabi-4_9-2015q3/bin/arm-none-eabi
 CC := $(CROSS)-gcc
 
-PROJECTNAME := iotest
+PROJECTNAME := maple-leaf-iotest
 
 CFLAGS := -g -O0 -Wall -mlittle-endian -mthumb -mcpu=cortex-m3 -mthumb-interwork
 CFLAGS += -fdata-sections -ffunction-sections
@@ -17,7 +17,7 @@ LDFLAGS += -Xlinker --gc-sections
 CFLAGS += -Iinc -Iutil/inc
 
 OBJS := \
-        src/startup_stm32f103xb.o \
+#        src/startup_stm32f103xb.o \
         src/system_stm32f10x.o \
         src/main.o \
         src/leds.o \
@@ -31,7 +31,7 @@ OBJS := \
         src/cli/cmd_uname.o
 
 include Makefile.stdperiph
-include Makefile.mw
+#include Makefile.mw
 
 ALL_DEPS := $(patsubst %.o,%.d,$(OBJS))
 
