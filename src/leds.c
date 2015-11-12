@@ -21,11 +21,11 @@ static int bLit = 0;
 int led_toggle(void){
 
 	if( bLit ) {
-		GPIO_ResetBits(GPIOC,GPIO_Pin_12);
+		GPIO_ResetBits(GPIOA,GPIO_Pin_6);
 		//GPIOA->BRR = 1 << 6;
 	} else {
 		//GPIOA->BSRR = 1 << 6;
-		GPIO_SetBits(GPIOC,GPIO_Pin_12);
+		GPIO_SetBits(GPIOA,GPIO_Pin_6);
 	}
 
 	bLit = !bLit;
