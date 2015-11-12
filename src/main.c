@@ -6,7 +6,7 @@
 #include "cli/cli.h"
 #include "types.h"
 #include "log.h"
-//#include "leds.h"
+#include "leds.h"
 
 osThreadId defaultTaskHandle;
 
@@ -20,13 +20,13 @@ void StartDefaultTask(void const * argument)
 	//uart_puts("Hello, task\r\n");
 
 	
-//	leds_init();
+    leds_init();
 
 
 	for(;;) {
 
 		//LOG("Hello, task. i=%i  SME=%u",i++,stopModeEntrys);
-//		led_toggle();
+        led_toggle();
 		osDelay(100);
 	}
 }

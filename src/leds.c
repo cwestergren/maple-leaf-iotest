@@ -8,7 +8,7 @@ int leds_init(void) {
 
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
 
-	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_6;
+	GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_5;
 	GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_Out_PP;
 
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
@@ -21,11 +21,11 @@ static int bLit = 0;
 int led_toggle(void){
 
 	if( bLit ) {
-		GPIO_ResetBits(GPIOA,GPIO_Pin_6);
+		GPIO_ResetBits(GPIOA,GPIO_Pin_5);
 		//GPIOA->BRR = 1 << 6;
 	} else {
 		//GPIOA->BSRR = 1 << 6;
-		GPIO_SetBits(GPIOA,GPIO_Pin_6);
+		GPIO_SetBits(GPIOA,GPIO_Pin_5);
 	}
 
 	bLit = !bLit;
