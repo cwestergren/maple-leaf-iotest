@@ -19,12 +19,9 @@ void StartDefaultTask(void const * argument)
 	//uart_init();
 	//uart_puts("Hello, task\r\n");
 
-	
     leds_init();
 
-
 	for(;;) {
-
 		//LOG("Hello, task. i=%i  SME=%u",i++,stopModeEntrys);
         led_toggle();
 		osDelay(100);
@@ -37,8 +34,7 @@ void CAOS_OutputDebugString(const char *pzStr) {
 
 int main(void) {
 
-
-	osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 256);
+	osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 512);
 	defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
 	osKernelStart();

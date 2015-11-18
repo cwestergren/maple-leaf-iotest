@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 301a0d0..2df3eb4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -41,7 +41,7 @@ clean:
+ 	rm -f $(PROJECTNAME).bin $(PROJECTNAME).elf $(PROJECTNAME).map $(OBJS) $(ALL_DEPS)
+ 
+ flash: $(PROJECTNAME).bin $(PROJECTNAME).elf
+-	openocd -f scripts/stlink-v2.cfg -f scripts/stm32f4x.cfg \
++	openocd -f scripts/stlink-v2.cfg -f scripts/stm32f1x.cfg \
+ 		-c init \
+ 		-c "reset halt" \
+ 		-c "reset init" \

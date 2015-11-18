@@ -41,7 +41,7 @@ clean:
 	rm -f $(PROJECTNAME).bin $(PROJECTNAME).elf $(PROJECTNAME).map $(OBJS) $(ALL_DEPS)
 
 flash: $(PROJECTNAME).bin $(PROJECTNAME).elf
-	openocd -f scripts/stlink-v2.cfg -f scripts/stm32f4x.cfg \
+	openocd -f scripts/stlink-v2.cfg -f scripts/stm32f1x_stlink.cfg \
 		-c init \
 		-c "reset halt" \
 		-c "reset init" \
